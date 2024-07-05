@@ -1,0 +1,117 @@
+			     EE 109  - Spring 2024
+				  Speed Trap
+
+
+Checkpoint 1:
+
+1.  Splash screen with your name shown at start.
+
+2.  Sensors start and stop timing.  If a measurement is started but not
+    completed after 4 sec, the measurement is terminated and a message shown on
+    the LCD.
+
+3.  Elapsed time and speed displayed properly.  The elapsed time is shown to 1
+    ms precision and the calculation of the speed based on the time delay
+    between the sensors is correct and is shown to a precision of 0.1 cm/sec.
+
+4.  The LED timing indicator operates properly, going on at the start of a
+    timing event and off when it is complete.
+
+Checkpoint 2:
+
+1.  Rotary encoder can adjust threshold between 1 and 99 cm/sec.
+
+2.  Buzzer sounds warning if speed measured on the local device is above the
+    speed set with the rotary encoder.
+
+3.  The servo motor adjusts the indicator to correctly point at speed that was
+    measured on the local device.
+
+4.  The maxium speed threshold is stored in EEPROM and retrieved when
+    restarted.
+
+Checkpoint 3:
+
+1.  After a speed measurement is complete the device sends local speed to
+    remote device over the serial link.
+
+2.  Device can receive a speed from the remote device and displays it on LCD
+    with 0.1 cm/sec precision.
+
+3.  The RGB LED operate to show how the local and remote speeds compare.
+
+
+
+Review Question 1 (Cost Analysis):
+
+Assume we are building 1000 units of this system.  Use the provided part
+numbers (see the webpage) and the digikey.com or jameco.com website to find the
+total **cost per unit** (again assume we build a quantity of 1000 units) for
+these speed traps.  Itemize the part costs (list each part and its unit cost
+when bought in units of 1000) and then show the final cost per unit below.
+
+Note: You only need to price the components used in the project (not all the
+components in your lab kit.)  Also, you do not need to account for the cost of
+the circuit board or wires. In a real environment we would manufacture a PCB
+(Printed Circuit Board). As an optional task, you can search online for PCB
+manufacturers and what the costs and options are in creating a PCB.
+
+Wire Cutter and Stripper: $4.49
+Breadboard: price not included
+USB Cable: $1.49
+Arduino UNO: $27.60
+LCD Keypad Shield: $9.90
+14 Jumper Wires: $3.77
+    100 Jumper Wires: $26.95
+    26.95 / 100 * 14 = $3.77
+Yellow LED: $0.32
+4 x 240 Ohm Resistor: $0.40
+3 x 130k Ohm Resistor: $0.30
+2 x 680 Ohm Resistor: $0.20
+74HCT00: $0.72
+Rotary Encoder & Knob: $4.46 + $1.39 = $5.85
+Buzzer: $0.74
+Servo: $5.95
+RGB LED = $0.09
+White LED x 2: $0.29 x 2 = $0.58
+Phototransistor x 2: $0.67 x 2 = $1.34
+Tri-State Buffer: $0.64
+
+Total Cost per Unit: $64.38
+
+---------------------------------------------------------------------------
+Review Question 2 (Health/Safety/Reliability)
+
+Assume this system was to be sold to consumers for use at their home.
+
+Considering reliability, health, and safety...
+
+ - What scenarios might you suggest testing (considering both HW and SW) 
+    before releasing the product for use? 
+
+To test the hardware, it would be good to test different weather and 
+temperature conditions (humidity, heat, etc.) to make sure that the 
+hardware components such as the rotary encoder, tri-state buffer and 
+arduino are able to still work well. Testing different lighting 
+situations would also be needed to ensure the phototransistor and white LED
+still work. 
+
+To test the software, we would probably want to make sure that if one of the
+components stops working, the others still do well. For software, we would
+also test any extreme cases with the rotary encoder and speed measurements.
+
+ - How might you make your design more reliable? By reliability we don't just
+   mean keeping it running correctly (though you should consider that), but
+   also how you can detect that a connected component has failed to gracefully
+   handle such situations. You can consider both HW and SW points of failure,
+   issues related to the operational environment, etc. and how to mitigate
+   those cases.
+
+In order to increase reliability, the user should be able to detect which 
+components are not working correctly. To do this, we could choose to install
+different colored LEDs that turn on when a failing component is detected. To
+successfully implement this addition into the software, we would need to do 
+further testing to see what values are returned (or not returned) when a 
+component stops working. We could also install extra hardware components such 
+as a thermometer and light sensro with additional indicators to go off if the 
+temperature or lighting is too extreme.
