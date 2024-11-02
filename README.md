@@ -1,8 +1,6 @@
 # Hi! I'm Grishma
 Studying Electrical & Computer Engineering at USC (University of Southern California)
 
-
-# About Me
 # Languages and Tools
 - Python
 - Java
@@ -10,11 +8,12 @@ Studying Electrical & Computer Engineering at USC (University of Southern Califo
 - HTML, CSS, Javascript
 
 
-
 # Projects
 
-# Interests or Hobbies
+# My Involvements
 - Society of Women Engineers
+- Machine Learning Algorithm & Hardware Co-design Lab
+- 
 
 # Contact Information
 LinkedIn: https://www.linkedin.com/in/grish-shukla/
